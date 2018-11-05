@@ -1,4 +1,4 @@
-import os
+mport os
 
 filetodelete = input("Enter the file name:")
 os.chdir(r'd:/')
@@ -15,6 +15,6 @@ for path, dirs, files in os.walk(path):
                   os.chdir(path)
                   os.unlink(file)
                   print(file + ' is removed at ' + path)
-            else:
-                  print("file no more")
-exit()
+                  exit()
+           
+print("file no more")
