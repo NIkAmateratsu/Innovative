@@ -1,7 +1,20 @@
 import os
 
 filetodelete = input("Enter the file name:")
-if os.path.exists(filetodelete):
-   os.remove(filetodelete)
-else:
-	print("The file does not exits")
+os.chdir(r'd:/')
+path = os.getcwd()
+
+
+all_file = []
+for path, dirs, files in os.walk(path):
+
+      for file in files:
+            all_file.append(file)
+
+            if file == filetodelete:
+                  os.chdir(path)
+                  os.unlink(file)
+                  print(file + ' is removed at ' + path)
+            else:
+                  print("file no more")
+exit()
